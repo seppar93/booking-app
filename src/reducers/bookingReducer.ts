@@ -1,19 +1,4 @@
-export interface Booking {
-  id: number;
-  propertyName: string;
-  startDate: string;
-  endDate: string;
-  guests: number;
-}
-
-export type State = {
-  bookings: Booking[];
-};
-
-export type Action =
-  | { type: "ADD_BOOKING"; payload: Booking }
-  | { type: "UPDATE_BOOKING"; payload: Booking }
-  | { type: "DELETE_BOOKING"; payload: number };
+import { Action, State } from "../types/bookingType";
 
 const initialState: State = {
   bookings: [],
@@ -21,22 +6,22 @@ const initialState: State = {
 
 function bookingReducer(state: State, action: Action): State {
   switch (action.type) {
-    case "ADD_BOOKING":
+    case 'ADD_BOOKING':
       return { ...state, bookings: [...state.bookings, action.payload] };
-    case "UPDATE_BOOKING":
+    case 'UPDATE_BOOKING':
       return {
         ...state,
         bookings: state.bookings.map((booking) =>
           booking.id === action.payload.id ? action.payload : booking
         ),
       };
-    case "DELETE_BOOKING":
+    case 'DELETE_BOOKING':
       return {
         ...state,
-        bookings: state.bookings.filter(
-          (booking) => booking.id !== action.payload
-        ),
+        bookings: state.bookings.filter((booking) => booking.id !== action.payload),
       };
+    case 'SET_INITIAL_STATE':
+      return action.payload;
     default:
       return state;
   }

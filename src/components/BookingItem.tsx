@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import BookingForm from "./BookingForm";
 import { FiEdit, FiTrash } from "react-icons/fi";
 import useBookingContext from "../contexs/useBookingContext";
-import { Booking } from "../reducers/bookingReducer";
+import { Booking } from "../types/bookingType";
 
 interface BookingItemProps {
   booking: Booking;
@@ -17,22 +17,22 @@ function BookingItem({ booking }: BookingItemProps) {
   }
 
   return (
-    <div className="border p-4 rounded-lg shadow-md flex justify-between items-center bg-white">
+    <div className="flex items-center justify-between p-4 bg-white border rounded-lg shadow-md">
       <div>
         <p className="font-bold">{booking.propertyName}</p>
         <p>{`${booking.startDate} - ${booking.endDate}`}</p>
         <p>{`${booking.guests} guests`}</p>
       </div>
-      <div className="space-x-2 flex">
+      <div className="flex space-x-2">
         <button
           onClick={() => setIsEditing(true)}
-          className="bg-yellow-500 text-white p-2 rounded"
+          className="p-2 text-white bg-yellow-500 rounded"
         >
           <FiEdit />
         </button>
         <button
           onClick={handleDelete}
-          className="bg-red-500 text-white p-2 rounded"
+          className="p-2 text-white bg-red-500 rounded"
         >
           <FiTrash />
         </button>
