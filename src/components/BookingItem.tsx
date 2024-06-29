@@ -1,11 +1,20 @@
 import React, { useState } from "react";
-import { FiEdit, FiTrash } from "react-icons/fi";
 import BookingForm from "./BookingForm";
+import { FiEdit, FiTrash } from "react-icons/fi";
+import useBookingContext from "../contexs/useBookingContext";
+import { Booking } from "../reducers/bookingReducer";
 
-function BookingItem({ booking }) {
+interface BookingItemProps {
+  booking: Booking;
+}
+
+function BookingItem({ booking }: BookingItemProps) {
+  const { dispatch } = useBookingContext();
   const [isEditing, setIsEditing] = useState(false);
 
-  function handleDelete() {}
+  function handleDelete() {
+    dispatch({ type: "DELETE_BOOKING", payload: booking.id });
+  }
 
   return (
     <div className="border p-4 rounded-lg shadow-md flex justify-between items-center bg-white">

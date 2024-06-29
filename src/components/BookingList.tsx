@@ -1,7 +1,10 @@
 import React from "react";
 import BookingItem from "./BookingItem";
+import useBookingContext from "../contexs/useBookingContext";
 
-function BookingList({ state }) {
+function BookingList() {
+  const { state } = useBookingContext();
+
   return (
     <div className="space-y-4">
       {state.bookings.map((booking) => (

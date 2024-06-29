@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import BookingForm from './components/BookingForm';
-import BookingList from './components/BookingList';
+import React, { useState } from "react";
+import BookingForm from "./components/BookingForm";
+import BookingList from "./components/BookingList";
+import BookingProvider from "./contexs/BookingProvider";
 
 function App() {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -10,6 +11,7 @@ function App() {
   }
 
   return (
+    <BookingProvider>
       <div className="container mx-auto p-4">
         <h1 className="text-2xl font-bold mb-4">Booking Management</h1>
         <button
@@ -21,6 +23,7 @@ function App() {
         {isFormOpen && <BookingForm onClose={toggleForm} />}
         <BookingList />
       </div>
+    </BookingProvider>
   );
 }
 
