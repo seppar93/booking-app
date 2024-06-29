@@ -16,8 +16,8 @@ It also uses `react-hook-form` for form handling and `zod` for validation.
 To get started with this project, clone the repository and install the dependencies.
 
 ```bash
-git clone https://github.com/your-username/my-booking-app.git
-cd my-booking-app
+git clone https://github.com/your-username/booking-app.git
+cd booking-app
 npm install
 npm run dev
 ```
