@@ -40,3 +40,6 @@ npm run dev
 ![Screenshot 2024-06-28 at 10 41 23 PM](https://github.com/seppar93/booking-app/assets/21979113/7a72ab26-7ef2-4c9f-a432-6972315e95e2)
 
 ![Screenshot 2024-06-28 at 10 42 07 PM](https://github.com/seppar93/booking-app/assets/21979113/f7641626-1a10-45bb-b4ff-b397f4fe317d)
+
+![Screenshot 2024-06-28 at 10 45 59 PM](https://github.com/seppar93/booking-app/assets/21979113/ab72636d-67a1-4d6c-b974-8ad0106bb3d5)
+
